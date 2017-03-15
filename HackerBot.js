@@ -21,10 +21,10 @@ function hasRole(mem, role) { /// this function checks for user's role
 	}
 }
 //-----------------------------------------------------------------------------------------
-/*client.on('ready', () => {
-  console.log('');
+client.on('ready', () => {
+  console.log('Bot is Online');
 });
-*/
+
 //-----------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ client.on('message', message => { /// basicaly the start of the bot
   }
   if (commandIs("INFO", message)){
   	message.delete()
-  	message.channel.spassMessage("This is EliteSB's private bot coded by Pyth3rEx. For any questions or support ask him directly `Pyth3rEx#9752`. Regular updates will come overtime. Pre-alpha 0.3.3");
+  	message.channel.spassMessage('This is public bot "Hacker Bot" made by WhiteEyeHackers Dev team. Pre-alpha 1.5.0');
   }
 //-----------------------------------------------------------------------------------------
   if (commandIs("SAY", message)){
