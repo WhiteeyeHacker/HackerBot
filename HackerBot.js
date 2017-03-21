@@ -103,6 +103,8 @@ client.on('message', message => { /// basicaly the start of the bot
     message.channel.spassMessage(`${user} does definately not like ${victime}. He takes he's huge 500MAgnum and blows ${victime}'s head. There is really nothing left of ${victime}.`)
   }
 //-----------------------------------------------------------------------------------------
+	//Get exploits list from db.
+	//Not functional
 	if(input.startsWith("!WOT"))
   {
 const exec = require('child_process').exec;
@@ -163,14 +165,30 @@ exec('searchsploit', (error, stdout, stderr) => {
 //	var postedmsg = message.content;
 
   }
-
+	//Assign beginer role to message sender
 	if(input.startsWith("!ASSIGN")){
  	 if(input.indexOf("BEGINNER") !== -1){
 		 message.member.addRole("254851131551907853");
 		 message.channel.sendMessage("User " + message.author + " has been granted role ***Beginner Hacker***");
  	 }
   }
+	//Unassign beginer role to message sender
 	if(input.startsWith("!UNASSIGN")){
+		if(input.indexOf("BEGINNER") !== -1){
+			message.member.removeRole("254851131551907853");
+			message.channel.sendMessage("User " + message.author + "'s role ***Beginner Hacker*** has been removed");
+
+		}
+	}
+		//Assign beginer role to message sender
+	if(input.startsWith("!ASSIGNTO")){
+ 	 if(input.indexOf("BEGINNER") !== -1){
+		 message.member.addRole("254851131551907853");
+		 message.channel.sendMessage("User " + message.author + " has been granted role ***Beginner Hacker***");
+ 	 }
+  }
+	//Unassign beginer role to message sender
+	if(input.startsWith("!UNASSIGNTO")){
 		if(input.indexOf("BEGINNER") !== -1){
 			message.member.removeRole("254851131551907853");
 			message.channel.sendMessage("User " + message.author + "'s role ***Beginner Hacker*** has been removed");
@@ -180,7 +198,7 @@ exec('searchsploit', (error, stdout, stderr) => {
 
  });
 
-
+//Sets Guest name to new user
  client.on("guildMemberAdd", (member) => {
 	 //member.addRole(293379144052375552);
 	 member.setNickname("Guest: " + member.user.username);
