@@ -187,14 +187,13 @@ exec('searchsploit', (error, stdout, stderr) => {
 				victime = message.mentions.users.first()
 	 		 message.member.addRole("254851131551907853");
 	 		 message.channel.sendMessage("User " + victime + " has been granted role ***Beginner Hacker*** by " + message.author + ".");
+			}
 			else {
 				"ERROR: The desired command is wrong. Make sure you use ```!AssignTo Beginner @<target>```"
-			}
 	 		}
 		}
 		else {
 				"ERROR: The desired command is wrong. Make sure you use ```!AssignTo Beginner @<target>```"
-			}
 		}
 	}
 
@@ -204,14 +203,13 @@ exec('searchsploit', (error, stdout, stderr) => {
 			if(input.indexOf("BEGINNER") !== -1){
 				message.member.removeRole("254851131551907853");
 	 		 message.channel.sendMessage("User " + victime + "'s role ***Beginner Hacker*** has been removed by " + message.author + ".");
+			}
 			else {
 				 "ERROR: The desired command is wrong. Make sure you use ```!UnassignTo Beginner @<target>```"
 			}
 		}
 		else {
 				"ERROR: The desired command is wrong. Make sure you use ```!UnassignTo Beginner @<target>```"
-			}
-			}
 		}
 	}
 
