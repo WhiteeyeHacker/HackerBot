@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+var client = new Discord.Client();
+var bot = new Discord.Client();
 //-----------------------------------------------------------------------------------------
 var Author
 var user
@@ -28,6 +29,8 @@ client.on('ready', () => {
 //-----------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------
+
+
 
 //-----------------------------------------------------------------------------------------
 client.on('message', message => { /// basicaly the start of the bot
@@ -111,6 +114,8 @@ exec('searchsploit', (error, stdout, stderr) => {
 	{
 		message.channel.spassMessage("Testingar : " + index + " => " + element);
 	}
+//------------------------------------------------------
+
 //-----------------------------------------------------------------------------------------
 	var testing = `${error}`;
 	var testingl = testing.length;
@@ -154,7 +159,31 @@ exec('searchsploit', (error, stdout, stderr) => {
   if (commandIs("HEY", message)){
     message.delete()
     message.channel.spassMessage("How's it going?");
+//--------------------------------------------------------------------
+//	var postedmsg = message.content;
+
   }
+
+	if(input.startsWith("!ASSIGN")){
+ 	 if(input.indexOf("BEGINNER") !== -1){
+		 message.member.addRole("254851131551907853");
+		 message.channel.sendMessage("User " + message.author + " has been granted role ***Beginner Hacker***");
+ 	 }
+  }
+	if(input.startsWith("!UNASSIGN")){
+		if(input.indexOf("BEGINNER") !== -1){
+			message.member.removeRole("254851131551907853");
+			message.channel.sendMessage("User " + message.author + "'s role ***Beginner Hacker*** has been removed");
+
+		}
+	}
+
  });
 
-client.login('add key here');
+
+ client.on("guildMemberAdd", (member) => {
+	 //member.addRole(293379144052375552);
+	 member.setNickname("Guest: " + member.user.username);
+ });
+
+client.login('your bot token key here');
