@@ -191,6 +191,7 @@ exec('searchsploit', (error, stdout, stderr) => {
 				"ERROR: The desired command is wrong. Make sure you use ```!AssignTo Beginner @<target>```"
 			}
 	 		}
+		}
 		else {
 				"ERROR: The desired command is wrong. Make sure you use ```!AssignTo Beginner @<target>```"
 			}
@@ -209,6 +210,7 @@ exec('searchsploit', (error, stdout, stderr) => {
 		}
 		else {
 				"ERROR: The desired command is wrong. Make sure you use ```!UnassignTo Beginner @<target>```"
+			}
 			}
 		}
 	}
