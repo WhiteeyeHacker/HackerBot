@@ -180,19 +180,38 @@ exec('searchsploit', (error, stdout, stderr) => {
 
 		}
 	}
-		//Assign beginer role to message sender
-	if(input.startsWith("!ASSIGNTO")){
- 	 if(input.indexOf("BEGINNER") !== -1){
-		 message.member.addRole("254851131551907853");
-		 message.channel.sendMessage("User " + message.author + " has been granted role ***Beginner Hacker***");
- 	 }
-  }
-	//Unassign beginer role to message sender
-	if(input.startsWith("!UNASSIGNTO")){
-		if(input.indexOf("BEGINNER") !== -1){
-			message.member.removeRole("254851131551907853");
-			message.channel.sendMessage("User " + message.author + "'s role ***Beginner Hacker*** has been removed");
+	if(hasRole(message.member, "Staff") //Check staff role
+	{
+		//Assign beginer role to mentioned target
+		if(input.startsWith("!ASSIGNTO")){
+	 		if(input.indexOf("BEGINNER") !== -1){
+				victime = message.mentions.users.first()
+	 		 message.member.addRole("254851131551907853");
+	 		 message.channel.sendMessage("User " + victime + " has been granted role ***Beginner Hacker*** by " + message.author + ".");
+			else {
+				"ERROR: The desired command is wrong. Make sure you use ```!AssignTo Beginner @<target>```"
+			}
+	 		}
+		else {
+				"ERROR: The desired command is wrong. Make sure you use ```!AssignTo Beginner @<target>```"
+			}
+		}
+	}
 
+	if(hasRole(message.member, "Staff") //Check staff role
+	{
+		//Unassign beginer role to mentioned target
+		if(input.startsWith("!UNASSIGN")){
+			if(input.indexOf("BEGINNER") !== -1){
+				message.member.removeRole("254851131551907853");
+	 		 message.channel.sendMessage("User " + victime + "'s role ***Beginner Hacker*** has been removed by " + message.author + ".");
+			else {
+				 "ERROR: The desired command is wrong. Make sure you use ```!UnassignTo Beginner @<target>```"
+			}
+		}
+		else {
+				"ERROR: The desired command is wrong. Make sure you use ```!UnassignTo Beginner @<target>```"
+			}
 		}
 	}
 
