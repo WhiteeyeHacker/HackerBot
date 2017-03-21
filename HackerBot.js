@@ -181,7 +181,6 @@ exec('searchsploit', (error, stdout, stderr) => {
 		}
 	}
 	if(hasRole(message.member, "Staff") //Check staff role
-	{
 		//Assign beginer role to mentioned target
 		if(input.startsWith("!ASSIGNTO")){
 	 		if(input.indexOf("BEGINNER") !== -1){
@@ -199,7 +198,6 @@ exec('searchsploit', (error, stdout, stderr) => {
 	}
 
 	if(hasRole(message.member, "Staff") //Check staff role
-	{
 		//Unassign beginer role to mentioned target
 		if(input.startsWith("!UNASSIGN")){
 			if(input.indexOf("BEGINNER") !== -1){
