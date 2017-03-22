@@ -3,12 +3,14 @@ A bot for our discord server.
 
 Make sure to read the [wiki](https://github.com/WhiteeyeHacker/HackerBot/wiki)
 
+Join us on our [Discord](https://discord.gg/vM3yjSU)
+
 **ChangeLog:**
 
 >     What is new in HackerBot_V1.5?
 >     -More commands
 >     -Enhanced bug fixing
->     Still working on issues
+>     -Still working on issues
 
 -------------------------
 
